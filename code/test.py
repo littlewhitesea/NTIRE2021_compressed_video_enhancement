@@ -36,7 +36,7 @@ parser.add_argument('--cuda', default=True, type=bool)
 ################################################################################
 parser.add_argument('--test_dir', type=str, default='/media/data4/wh/Track3_release_test_data/')
 parser.add_argument('--save_test_log', type=str, default='./result/log')
-parser.add_argument('--pretrain', type=str, default='../result/weight/X1_10L_64_epoch_206.pth')
+parser.add_argument('--pretrain', type=str, default='../pretrained_model/weight/X1_10L_64_epoch_206.pth')
 parser.add_argument('--image_out', type=str, default='../out/')
 opt = parser.parse_args()
 
