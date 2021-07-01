@@ -20,7 +20,7 @@ from arch import DUNet
 import time
 import os
 
-parser = argparse.ArgumentParser(description='PyTorch RRN Example')
+parser = argparse.ArgumentParser(description='PyTorch DUVE Example')
 parser.add_argument('--scale', type=int, default=1, help="super resolution upscale factor")
 parser.add_argument('--in_channel', type=int, default=3, help="the channel number of input image")
 parser.add_argument('--testbatchsize', type=int, default=1, help='testing batch size')
