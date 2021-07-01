@@ -6,6 +6,7 @@ cuda:10.0 pytorch:1.2 python:3.6 (Anaconda is recommended)
 
 ## The Link to the pretrained model
 https://drive.google.com/file/d/1cyJpf32SrAZzB1cdgZ0FJtC1ugjKBJ_a/view?usp=sharing
+
 Download the pretrained model, and then put it in the ./pretrained_model/weight.
 
 ## Test
