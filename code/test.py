@@ -23,6 +23,9 @@ import os
 parser = argparse.ArgumentParser(description='PyTorch DUVE Example')
 parser.add_argument('--scale', type=int, default=1, help="super resolution upscale factor")
 parser.add_argument('--in_channel', type=int, default=3, help="the channel number of input image")
+parser.add_argument('--n_feature', type=int, default=64, help="the channel number of feature map")
+parser.add_argument('--n_block1', type=int, default=6, help="the block number of RCAB in Unet1")
+parser.add_argument('--n_block2', type=int, default=10, help="the block number of RCAB in Unet2")
 parser.add_argument('--testbatchsize', type=int, default=1, help='testing batch size')
 parser.add_argument('--threads', type=int, default=16, help='number of threads for data loader to use')
 parser.add_argument('--seed', type=int, default=0, help='random seed to use. Default=123')
@@ -56,9 +59,9 @@ def main():
         cudnn.benchmark = False
         torch.cuda.manual_seed(opt.seed)
     pin_memory = True if use_gpu else False
-    n_c = 64
-    n_b1 = 6
-    n_b2 = 10
+    n_c = opt.n_feature
+    n_b1 = opt.n_block1
+    n_b2 = opt.n_block2
     dunet = DUNet(opt.in_channel, n_c, n_b1, n_b2)  # initial filter generate network
     print(dunet)
     print("Model size: {:.5f}M".format(sum(p.numel() for p in dunet.parameters()) * 4 / 1048576))
